@@ -1,0 +1,364 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+:root {
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Rochester", cursive;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1.1rem;
+
+  --clr-light: #f8f8f8;
+  --clr-dark: #303030;
+  --clr-accent: #192644;
+  --clr-opacity: rgba(25, 38, 68, 0.9);
+
+  --box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  --text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.3rem;
+  }
+}
+
+/* estilos gerais */
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  position: relative;
+  width: 100%;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  background-color: #3d3d3d;
+  color: var(--clr-light);
+}
+
+section {
+  padding: 2em;
+  text-align: center;
+}
+
+.projetos {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.intro,
+.fotos,
+.sobre-mim,
+.meus-projetos,
+.projeto {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 120vh;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  line-height: 1.6;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-secondary);
+  text-decoration: none;
+  text-align: center;
+  color: var(--clr-light);
+  background-color: transparent;
+  border: 3px solid var(--clr-light);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  transition: color 250ms ease-in-out;
+  overflow: hidden;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 110%;
+  background-color: var(--clr-light);
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--clr-accent);
+}
+.btn:hover::before {
+  transform: translateY(0%);
+}
+
+/* fim estilos gerais */
+
+/* tipografia */
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.section__title {
+  margin-bottom: 0.25em;
+}
+
+.section__title,
+.section__subtitle {
+  text-shadow: var(--text-shadow);
+}
+
+.tipo {
+  font-size: var(--fs-body);
+}
+
+.tipo__title {
+  font-size: var(--fs-h2);
+  font-family: var(--ff-secondary);
+}
+
+/* fim tipografia */
+
+/* intro */
+
+.intro {
+  background: url("../images/intro.jpg") center no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: block;
+}
+
+.intro__body {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3em solid transparent;
+  padding: 15px;
+  width: fit-content;
+  border-image: url("../images/intro_bkg.png") 50 round;
+  box-shadow: var(--box-shadow);
+}
+
+.section__title--intro {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
+  font-family: var(--ff-primary);
+}
+
+.section__subtitle--intro {
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-h2);
+  font-family: var(--ff-secondary);
+}
+
+/* fim intro */
+
+/* fotos */
+.fotos {
+  background: var(--clr-opacity);
+  background-blend-mode: multiply;
+  background-image: url("../images/fotos.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.section__title--fotos {
+  position: relative;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
+  margin: 0 auto;
+}
+
+.section__title--fotos::after {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 2px;
+  background: var(--clr-light);
+  opacity: 0.75;
+  margin: 0.3em auto;
+}
+
+.tipos {
+  margin-bottom: 4em;
+}
+
+.tipo {
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+@media screen and (min-width: 600px) {
+  .tipos {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tipo {
+    font-weight: var(--fw-bold);
+  }
+
+  .tipo + .tipo {
+    margin-left: 2em;
+  }
+}
+
+/* fim fotos */
+
+/* sobre-mim */
+.sobre-mim {
+  background: url("../images/eu.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.section__title--sobre {
+  position: relative;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
+  margin: 0 auto;
+}
+
+.section__title--sobre::after {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 2px;
+  background: var(--clr-light);
+  opacity: 0.75;
+  margin: 0.3em auto;
+  box-shadow: var(--box-shadow);
+}
+
+.sobre__p {
+  display: block;
+  background-color: rgba(48, 48, 48, 0.7);
+  border: var(--clr-light) solid 3px;
+}
+
+.sobre__p + .sobre__p {
+  margin-top: 3em;
+}
+
+@media screen and (min-width: 600px) {
+  .sobre__body {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sobre__p {
+    font-weight: var(--fw-bold);
+    max-width: 500px;
+  }
+  .sobre__p + .sobre__p {
+    margin-top: 0;
+    margin-left: 0.5em;
+  }
+}
+
+/* fim sobre-mim */
+
+/* .meus-projetos */
+.meus-projetos {
+  background: url("../images/meu-trabalho.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.projetos .projeto:nth-child(1) {
+  background: url("../images/Photography_1.jpg") center no-repeat;
+  background-size: cover;
+}
+.projetos .projeto:nth-child(2) {
+  background: url("../images/Photography_2.jpg") center no-repeat;
+  background-size: cover;
+}
+.projetos .projeto:nth-child(3) {
+  background: url("../images/Photography_3.jpg") center no-repeat;
+  background-size: cover;
+}
+.projetos .projeto:nth-child(4) {
+  background: url("../images/Photography_4.jpg") center no-repeat;
+  background-size: cover;
+}
+
+/* fim .meus-projetos */
+
+/* footer */
+.footer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto;
+  background: var(--clr-dark);
+  text-align: center;
+}
+.footer__link {
+  font-weight: var(--fw-bold);
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.social-list__item {
+  margin: 0 0.5em;
+}
+
+.footer__link,
+.social-list__link {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.2em;
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+  opacity: 0.7;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+/* fim footer */

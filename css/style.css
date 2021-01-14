@@ -70,7 +70,7 @@ section {
 .projeto {
   position: relative;
   width: 100%;
-  min-height: 100px;
+  min-height: 200px;
   height: auto;
 }
 
@@ -172,17 +172,16 @@ h3 {
   background: url("../images/intro.jpg") center no-repeat;
   background-size: cover;
   text-align: center;
-  display: block;
+  margin: 0 auto;
 }
 
 .intro__body {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border: 3em solid transparent;
-  padding: 15px;
-  width: fit-content;
+  width: 100%;
   border-image: url("../images/intro_bkg.png") 50 round;
   box-shadow: var(--box-shadow);
 }
@@ -197,6 +196,20 @@ h3 {
   font-weight: var(--fw-reg);
   font-size: var(--fs-h2);
   font-family: var(--ff-secondary);
+}
+
+@media screen and (min-width: 900px) {
+  .intro__body {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3em solid transparent;
+    padding: 15px;
+    width: fit-content;
+    border-image: url("../images/intro_bkg.png") 50 round;
+    box-shadow: var(--box-shadow);
+  }
 }
 
 /* fim intro */

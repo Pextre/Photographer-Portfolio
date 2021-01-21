@@ -86,7 +86,7 @@ section {
   background-color: transparent;
   border: 3px solid var(--clr-light);
   border-radius: 0.5em;
-  padding: 0.5em;
+  padding: 0.2em 1rem;
   transition: color 250ms ease-in-out;
   overflow: hidden;
   z-index: 1;
@@ -242,7 +242,7 @@ h3 {
 }
 
 .tipos {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 .tipo {
@@ -260,18 +260,9 @@ h3 {
   position: relative;
   margin-top: 1em;
   z-index: 1;
-}
-
-.tipo_text::before {
-  content: "";
-  background-color: var(--clr-dark);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-  z-index: -1;
+  background-color: #192644;
+  padding: 20px;
+  border-radius: 0.5em;
 }
 
 @media screen and (min-width: 600px) {
@@ -317,7 +308,8 @@ h3 {
 .sobre__p {
   display: block;
   background-color: rgba(48, 48, 48, 0.7);
-  border: var(--clr-light) solid 3px;
+  border-radius: 0.5em;
+  padding: 20px;
 }
 
 .sobre__p + .sobre__p {

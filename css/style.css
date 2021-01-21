@@ -201,7 +201,7 @@ h3 {
 @media screen and (min-width: 900px) {
   .intro__body {
     position: relative;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 3em solid transparent;
